@@ -96,26 +96,30 @@ export default function RegisterPage() {
               <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
                 Kata Sandi
               </label>
-              <input
-                type="password"
-                autoComplete="current-password"
-                required
-                className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-1 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
-                value={form.password}
-                placeholder="Masukkan kata sandi"
-                onChange={(e) => setForm({ ...form, password: e.target.value })}
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-4 top-8 -translate-y-1/2 text-gray-400 hover:text-blue-500 transition-colors"
-              >
-                {showPassword ? (
-                  <Icon icon="lucide:eye-off" className="w-5 h-5" />
-                ) : (
-                  <Icon icon="lucide:eye" className="w-5 h-5" />
-                )}
-              </button>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  autoComplete="current-password"
+                  required
+                  className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-1 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
+                  value={form.password}
+                  placeholder="Masukkan kata sandi"
+                  onChange={(e) =>
+                    setForm({ ...form, password: e.target.value })
+                  }
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-4 top-8 -translate-y-1/2 text-gray-400 hover:text-blue-500 transition-colors"
+                >
+                  {showPassword ? (
+                    <Icon icon="lucide:eye-off" className="w-5 h-5" />
+                  ) : (
+                    <Icon icon="lucide:eye" className="w-5 h-5" />
+                  )}
+                </button>
+              </div>
             </div>
 
             <button
