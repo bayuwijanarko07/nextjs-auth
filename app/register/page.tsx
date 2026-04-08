@@ -49,7 +49,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-950 px-4 font-sans transition-colors duration-500">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-950 p-10 font-sans transition-colors duration-500">
       <div className="w-full max-w-md bg-white dark:bg-slate-900 shadow-sm border border-gray-200 dark:border-slate-800 rounded-2xl p-8 transform transition-all duration-300">
         <div className="mb-8">
           <h1 className="mb-2 font-semibold text-gray-800 dark:text-gray-300 text-3xl">Daftar Akun</h1>
