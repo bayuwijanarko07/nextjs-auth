@@ -6,8 +6,6 @@ import Link from "next/link";
 
 import LoadingSpinner from "@/components/LoadingSpinner";
 
-import { validateEmail, validatePassword } from "@/lib/utils";
-
 export default function RegisterPage() {
   const router = useRouter();
 
@@ -23,17 +21,6 @@ export default function RegisterPage() {
   const handleRegister = async (e: any) => {
     e.preventDefault();
     setError("");
-
-    // Validasi
-    if (!validateEmail(form.email)) {
-      setError("Format email tidak valid");
-      return;
-    }
-
-    if (!validatePassword(form.password)) {
-      setError("Password minimal 6 karakter");
-      return;
-    }
 
     setLoading(true);
 

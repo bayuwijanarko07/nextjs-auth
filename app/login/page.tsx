@@ -6,8 +6,6 @@ import Link from "next/link";
 
 import LoadingSpinner from "@/components/LoadingSpinner";
 
-import { validateEmail } from "@/lib/utils";
-
 function LoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -25,11 +23,6 @@ function LoginContent() {
   const handleLogin = async (e: any) => {
     e.preventDefault();
     setError("");
-
-    if (form.emailOrUsername.includes("@") && !validateEmail(form.emailOrUsername)) {
-      setError("Format email tidak valid");
-      return;
-    }
 
     setLoading(true);
 
