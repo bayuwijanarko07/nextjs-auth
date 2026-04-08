@@ -7,7 +7,8 @@ Sistem autentikasi modern yang dibangun dengan **Next.js 15+**, mengimplementasi
 
 ## 🔗 Live Preview
 Akses aplikasi melalui tautan berikut:  
-[**https://nextjs-auth-flame.vercel.app/**]
+[ Live Preview ](https://nextjs-auth-flame.vercel.app)
+
 
 Login Menggunakan:
 - Username: testuser
@@ -81,7 +82,7 @@ npm install
 ### 3. Konfigurasi Environment (`.env`)
 ```env
 DATABASE_URL="mysql://user:pass@host:port/dbname"
-JWT_SECRET="rahasia-anda"
+JWT_SECRET="rahasia"
 ```
 
 ### 4. Setup & Run
