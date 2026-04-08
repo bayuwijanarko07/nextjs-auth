@@ -7,7 +7,18 @@ Sistem autentikasi modern yang dibangun dengan **Next.js 15+**, mengimplementasi
 
 ## 🔗 Live Preview
 Akses aplikasi melalui tautan berikut:  
-[**https://nextjs-auth-flame.vercel.app/**](https://nextjs-auth-flame.vercel.app/)
+[**https://nextjs-auth-flame.vercel.app/**](Di sini)
+
+Login Menggunakan:
+Username: testuser
+Password: password123
+
+Atau 
+
+Daftar Menggunakan:
+Email: 
+Username: 
+Password: 
 
 ## 📸 Screenshots UI
 
