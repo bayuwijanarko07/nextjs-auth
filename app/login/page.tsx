@@ -69,7 +69,8 @@ function LoginContent() {
         </div>
       )}
 
-      <form onSubmit={handleLogin} className="space-y-5">
+      <form onSubmit={handleLogin}>
+        <fieldset disabled={loading} className="space-y-5">
         <div>
           <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
             Email / Username
@@ -125,6 +126,7 @@ function LoginContent() {
         >
           {loading ? <LoadingSpinner /> : "Masuk"}
         </button>
+        </fieldset>
       </form>
 
       <div className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">

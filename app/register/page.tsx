@@ -62,7 +62,8 @@ export default function RegisterPage() {
           </div>
         )}
 
-        <form onSubmit={handleRegister} className="space-y-5">
+        <form onSubmit={handleRegister}>
+          <fieldset disabled={loading} className="space-y-5">
           <div>
             <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
               Nama Pengguna
@@ -109,6 +110,7 @@ export default function RegisterPage() {
           >
             {loading ? <LoadingSpinner /> : "Daftar"}
           </button>
+          </fieldset>
         </form>
 
         <div className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
