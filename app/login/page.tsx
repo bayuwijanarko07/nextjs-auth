@@ -52,7 +52,7 @@ function LoginContent() {
   return (
     <div className="w-full max-w-md bg-white dark:bg-slate-900 shadow-sm border border-gray-200 dark:border-slate-800 rounded-2xl p-8 transform transition-all duration-300">
 
-      <div className="mt-5 sm:mb-6">
+      <div className="mb-8">
         <h1 className="mb-2 font-semibold text-gray-800 dark:text-gray-300 text-3xl">Login</h1>
         <p className="text-sm mt-3 text-gray-500 dark:text-gray-400"> Silakan masukkan detail Anda untuk masuk</p>
       </div>
