@@ -11,13 +11,13 @@ Akses aplikasi melalui tautan berikut:
 
 ## 📸 Screenshots UI
 
-### Desktop View
+### Tampilan Desktop
 <div align="center">
-  <img src="./public/screenshots/desktop-login.png" width="48%" alt="Desktop Login" />
-  <img src="./public/screenshots/desktop-register.png" width="48%" alt="Desktop Register" />
+  <img src="./public/screenshots/desktop-login.png" width="32%" alt="Desktop Login" />
+  <img src="./public/screenshots/desktop-register.png" width="32%" alt="Desktop Register" />
 </div>
 
-### Mobile View
+### Tampilan Mobile
 <div align="center">
   <img src="./public/screenshots/mobile-login.png" width="200" alt="Mobile Login" />
   <img src="./public/screenshots/mobile-register.png" width="200" alt="Mobile Register" />
