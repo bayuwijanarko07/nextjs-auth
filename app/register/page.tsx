@@ -38,7 +38,7 @@ export default function RegisterPage() {
         return;
       }
 
-      router.push("/login?success=Account created! Please login.");
+      router.push("/login?success=Akun berhasil dibuat! Silakan masuk.");
     } catch (err) {
       setError("Terjadi kesalahan server");
     } finally {
@@ -51,9 +51,9 @@ export default function RegisterPage() {
       <div className="w-full max-w-md bg-white dark:bg-slate-900 shadow-sm border border-gray-200 dark:border-slate-800 rounded-2xl p-8 transform transition-all duration-300">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-extrabold text-blue-600 dark:text-blue-400 mb-2">
-            Create Account
+            Daftar Akun
           </h1>
-          <p className="text-gray-500 dark:text-gray-400">Join us to access the dashboard</p>
+          <p className="text-gray-500 dark:text-gray-400">Bergabunglah untuk mengakses dasbor</p>
         </div>
 
         {error && (
@@ -65,7 +65,7 @@ export default function RegisterPage() {
         <form onSubmit={handleRegister} className="space-y-5">
           <div>
             <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
-              Username
+              Nama Pengguna
             </label>
             <input
               type="text"
@@ -78,7 +78,7 @@ export default function RegisterPage() {
 
           <div>
             <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
-              Email Address
+              Alamat Email
             </label>
             <input
               type="email"
@@ -91,7 +91,7 @@ export default function RegisterPage() {
 
           <div>
             <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
-              Password
+              Kata Sandi
             </label>
             <input
               type="password"
@@ -107,14 +107,14 @@ export default function RegisterPage() {
             disabled={loading}
             className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 active:scale-[0.98] text-white py-3.5 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-500/30 disabled:opacity-70 mt-4 flex items-center justify-center gap-2"
           >
-            {loading ? <LoadingSpinner /> : "Register"}
+            {loading ? <LoadingSpinner /> : "Daftar"}
           </button>
         </form>
 
         <div className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
-          Already have an account?{" "}
+          Sudah punya akun?{" "}
           <Link href="/login" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">
-            Login here
+            Masuk di sini
           </Link>
         </div>
       </div>

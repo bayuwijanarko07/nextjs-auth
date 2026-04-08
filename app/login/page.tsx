@@ -52,9 +52,9 @@ function LoginContent() {
     <div className="w-full">
       <div className="text-center mb-8">
         <h1 className="text-3xl font-extrabold text-blue-600 dark:text-blue-400 mb-2">
-          Welcome Back
+          Selamat Datang Kembali
         </h1>
-        <p className="text-gray-500 dark:text-gray-400">Please enter your details to login</p>
+        <p className="text-gray-500 dark:text-gray-400">Silakan masukkan detail Anda untuk masuk</p>
       </div>
 
       {successMessage && (
@@ -87,7 +87,7 @@ function LoginContent() {
 
         <div>
           <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
-            Password
+            Kata Sandi
           </label>
           <div className="relative">
             <input
@@ -123,14 +123,14 @@ function LoginContent() {
           disabled={loading}
           className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 active:scale-[0.98] text-white py-3.5 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-500/30 disabled:opacity-70 mt-4 flex items-center justify-center gap-2"
         >
-          {loading ? <LoadingSpinner /> : "Login"}
+          {loading ? <LoadingSpinner /> : "Masuk"}
         </button>
       </form>
 
       <div className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
-        Don't have an account?{" "}
+        Belum punya akun?{" "}
         <Link href="/register" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">
-          Register here
+          Daftar di sini
         </Link>
       </div>
     </div>
@@ -142,7 +142,7 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-950 px-4 font-sans transition-colors duration-500">
       <div className="w-full max-w-md">
         <div className="bg-white dark:bg-slate-900 shadow-sm border border-gray-200 dark:border-slate-800 rounded-2xl p-8 transform transition-all duration-300">
-          <Suspense fallback={<div className="text-gray-500 dark:text-gray-400 text-center py-10">Loading...</div>}>
+          <Suspense fallback={<div className="text-gray-500 dark:text-gray-400 text-center py-10">Memuat...</div>}>
             <LoginContent />
           </Suspense>
         </div>

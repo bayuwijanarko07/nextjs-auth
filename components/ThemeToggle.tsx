@@ -27,7 +27,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       className="fixed top-6 right-6 p-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:scale-110 active:scale-95 transition-all duration-300 z-50 text-amber-500 dark:text-blue-400 group overflow-hidden"
-      aria-label="Toggle Dark Mode"
+      aria-label="Alihkan Mode Gelap"
     >
       <div className="relative w-6 h-6">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`absolute inset-0 w-6 h-6 transition-all duration-500 transform ${isDark ? 'opacity-0 rotate-90 scale-50' : 'opacity-100 rotate-0 scale-100'}`}>

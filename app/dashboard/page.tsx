@@ -30,7 +30,7 @@ export default async function DashboardPage() {
             type="submit"
             className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg transition"
           >
-            Logout
+            Keluar
           </button>
         </form>
       </div>
