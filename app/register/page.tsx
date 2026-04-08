@@ -64,52 +64,55 @@ export default function RegisterPage() {
 
         <form onSubmit={handleRegister}>
           <fieldset disabled={loading} className="space-y-5">
-          <div>
-            <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
-              Nama Pengguna
-            </label>
-            <input
-              type="text"
-              required
-              className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
-              value={form.username}
-              onChange={(e) => setForm({ ...form, username: e.target.value })}
-            />
-          </div>
+            <div>
+              <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
+                Nama Pengguna
+              </label>
+              <input
+                type="text"
+                required
+                className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
+                value={form.username}
+                placeholder="Masukkan nama pengguna"
+                onChange={(e) => setForm({ ...form, username: e.target.value })}
+              />
+            </div>
 
-          <div>
-            <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
-              Alamat Email
-            </label>
-            <input
-              type="email"
-              required
-              className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-            />
-          </div>
+            <div>
+              <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
+                Alamat Email
+              </label>
+              <input
+                type="email"
+                required
+                className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
+                value={form.email}
+                placeholder="Masukkan alamat email"
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+              />
+            </div>
 
-          <div>
-            <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
-              Kata Sandi
-            </label>
-            <input
-              type="password"
-              required
-              className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
-              value={form.password}
-              onChange={(e) => setForm({ ...form, password: e.target.value })}
-            />
-          </div>
+            <div>
+              <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">
+                Kata Sandi
+              </label>
+              <input
+                type="password"
+                required
+                className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
+                value={form.password}
+                placeholder="Masukkan kata sandi"
+                onChange={(e) => setForm({ ...form, password: e.target.value })}
+              />
+            </div>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 active:scale-[0.98] text-white py-3.5 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-500/30 disabled:opacity-70 mt-4 flex items-center justify-center gap-2"
-          >
-            {loading ? <LoadingSpinner /> : "Daftar"}
-          </button>
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 active:scale-[0.98] text-white py-3.5 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-500/30 disabled:opacity-70 mt-4 flex items-center justify-center gap-2"
+            >
+              {loading ? <LoadingSpinner /> : "Daftar"}
+            </button>
           </fieldset>
         </form>
 
