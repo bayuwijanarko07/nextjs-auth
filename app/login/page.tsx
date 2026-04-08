@@ -140,7 +140,7 @@ function LoginContent() {
 
 export default function LoginPage() {
   return (
-    <div className="relative flex lg:flex-row w-full h-screen justify-center flex-col bg-slate-100">
+    <div className="relative flex lg:flex-row w-full h-screen justify-center flex-col bg-slate-100 dark:bg-slate-950">
       <div className="lg:w-1/2 w-full h-full dark:bg-slate-900 lg:grid items-center justify-center hidden relative">
         <img src="/bg.avif" alt="bg" className="object-fill"></img>
       </div>
