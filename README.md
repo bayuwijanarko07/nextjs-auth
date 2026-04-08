@@ -1,6 +1,27 @@
 # Secure Next.js Authentication System
 
-Sistem autentikasi modern yang dibangun dengan Next.js, mengimplementasikan praktik keamanan terbaik termasuk JWT dalam HttpOnly cookies, hashing password dengan Bcrypt, dan pembatasan percobaan login (Rate Limiting).
+[![Deploy Link](https://img.shields.io/badge/Deploy-nextjs--auth--flame.vercel.app-blue)](https://nextjs-auth-flame.vercel.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/bayuwijanarko07/nextjs-auth)
+
+Sistem autentikasi modern yang dibangun dengan **Next.js 15+**, mengimplementasikan praktik keamanan terbaik termasuk **JWT** dalam **HttpOnly cookies**, hashing password dengan **Bcrypt**, dan pembatasan percobaan login (**Rate Limiting**).
+
+## 🔗 Live Preview
+Akses aplikasi melalui tautan berikut:  
+[**https://nextjs-auth-flame.vercel.app/**](https://nextjs-auth-flame.vercel.app/)
+
+## 📸 Screenshots UI
+
+### Desktop View
+<div align="center">
+  <img src="./public/screenshots/desktop-login.png" width="48%" alt="Desktop Login" />
+  <img src="./public/screenshots/desktop-register.png" width="48%" alt="Desktop Register" />
+</div>
+
+### Mobile View
+<div align="center">
+  <img src="./public/screenshots/mobile-login.png" width="200" alt="Mobile Login" />
+  <img src="./public/screenshots/mobile-register.png" width="200" alt="Mobile Register" />
+</div>
 
 ## 🚀 Tech Stack
 
@@ -10,67 +31,59 @@ Sistem autentikasi modern yang dibangun dengan Next.js, mengimplementasikan prak
 - **Database**: MySQL (Host: Railway)
 - **Authentication**: JWT (JsonWebToken) & HttpOnly Cookies
 - **Theme Management**: [next-themes](https://github.com/pacocoursey/next-themes)
-- **Validation**: [Zod](https://zod.dev/) integrated in logic
+- **Validation**: [Zod](https://zod.dev/)
 - **Security**: 
   - Password Hashing: `bcryptjs`
-  - Rate Limiting: Custom In-memory implementation (5 attempts/minute)
+  - Rate Limiting: Custom In-memory (5 percobaan/menit)
 
 ## 🏗️ Arsitektur Sistem
 
-Proyek ini mengikuti arsitektur modular Next.js App Router:
+Proyek ini menggunakan arsitektur modular **Next.js App Router**:
 
-- **`/app`**: Direktori utama untuk routing dan komponen halaman.
-  - **`/api/auth`**: Endpoint API untuk login, register, dan logout.
-  - **`/dashboard`**: Rute terproteksi yang memverifikasi JWT melalui middleware/logic server.
-- **`/components`**: Komponen UI yang dapat digunakan kembali (ThemeToggle, LoadingSpinner, dll).
-- **`/lib`**: Logika inti aplikasi.
-  - `auth.ts`: Utilitas untuk pembuatan dan verifikasi JWT.
-  - `prisma.ts`: Inisialisasi Prisma Client.
-  - `rateLimit.ts`: Logika pembatasan percobaan login per IP.
-- **`/prisma`**: Skema database dan migrasi.
+- **`/app`**: Routing dan Komponen Halaman.
+  - **`/api/auth`**: Endpoint API (Login, Register, Logout).
+  - **`/dashboard`**: Rute terproteksi dengan verifikasi server-side JWT.
+- **`/components`**: UI Reusable (ThemeToggle, LoadingSpinner).
+- **`/lib`**: Logika Inti (Auth utils, Prisma client, Rate limiter).
+- **`/prisma`**: Skema Database & Migrasi.
 
-### Alur Autentikasi:
-1. Pengguna memasukkan kredensial.
-2. Server memverifikasi terhadap database dan membandingkan hash password.
-3. Jika valid, server menghasilkan JWT dan menyimpannya dalam Cookie dengan flag `HttpOnly` (untuk mencegah serangan XSS).
-4. Setiap permintaan berikutnya ke halaman terproteksi menyertakan cookie ini untuk divalidasi oleh server.
+### Alur Kerja Autentikasi:
+1. **Submit**: Pengguna memasukkan kredensial (Email/Username).
+2. **Verify**: Server memvalidasi dengan Zod, mengecek database, dan membandingkan hash password.
+3. **Token**: Jika valid, JWT dibuat dan disimpan di **HttpOnly Cookie** (Aman dari XSS).
+4. **Protect**: Middleware atau Server Logic memverifikasi cookie pada setiap akses rute terproteksi.
 
-## 🛠️ Cara Menjalankan Project
+## 🛠️ Cara Menjalankan Project (Lokal)
 
 ### 1. Prasyarat
-Pastikan Anda sudah menginstal [Node.js](https://nodejs.org/) (versi 18+) dan [MySQL](https://www.mysql.com/).
+- Node.js 18+
+- MySQL Database
 
-### 2. Kloning & Instalasi
+### 2. Instalasi
 ```bash
-# Instal dependensi
+git clone https://github.com/bayuwijanarko07/nextjs-auth.git
+cd nextjs-auth
 npm install
 ```
 
-### 3. Konfigurasi Environment
-Buat file atau pastikan file `.env` sudah sesuai:
+### 3. Konfigurasi Environment (`.env`)
 ```env
-DATABASE_URL="mysql://root:password@host:port/dbname"
-JWT_SECRET="masukkan-secret-key-anda-disini"
+DATABASE_URL="mysql://user:pass@host:port/dbname"
+JWT_SECRET="rahasia-anda"
 ```
 
-### 4. Setup Database
+### 4. Setup & Run
 ```bash
-# Jalankan migrasi prisma untuk sinkronisasi schema
 npx prisma db push
-```
-
-### 5. Jalankan Aplikasi
-```bash
-# Development mode
 npm run dev
 ```
-Buka [http://localhost:3000](http://localhost:3000) di browser Anda.
+Aplikasi akan berjalan di [http://localhost:3000](http://localhost:3000).
 
 ## 🛡️ Fitur Keamanan
-- **Rate Limiting**: Maksimal 5 kali percobaan login per menit untuk mencegah Brute Force.
-- **CSRF & XSS Protection**: Token disimpan dalam HttpOnly Cookie.
-- **Password Safety**: Password tidak pernah disimpan dalam bentuk teks biasa (plain text).
-- **Modern UI**: Dilengkapi Dark Mode, Glassmorphism, dan animasi loading yang modern.
+- **Brute Force Protection**: Rate limiting 5x percobaan per menit.
+- **Cookie-based Auth**: Token disimpan secara aman tanpa akses JavaScript di sisi client.
+- **Password Hashing**: Menggunakan Bcrypt dengan salt 10.
+- **Modern Responsive Design**: Dukungan Dark Mode dan Full Responsive (Mobile/Desktop).
 
 ---
-Dikembangkan dengan ❤️ untuk sistem autentikasi yang aman dan estetik.
+*Dibuat oleh [Bayu Wijanarko](https://github.com/bayuwijanarko07)*
