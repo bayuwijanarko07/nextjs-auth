@@ -26,6 +26,7 @@ Daftar Menggunakan:
 <div align="center">
   <img src="./public/screenshots/desktop-login.avif" width="32%" alt="Desktop Login" />
   <img src="./public/screenshots/desktop-register.avif" width="32%" alt="Desktop Register" />
+  <img src="./public/screenshots/desktop-dashboard.avif" width="32%" alt="Desktop Dashboard" />
 </div>
 
 ### Tampilan Mobile
