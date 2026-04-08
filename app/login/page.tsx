@@ -50,12 +50,11 @@ function LoginContent() {
   };
 
   return (
-    <div className="w-full">
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-extrabold text-blue-600 dark:text-blue-400 mb-2">
-          Selamat Datang Kembali
-        </h1>
-        <p className="text-gray-500 dark:text-gray-400">Silakan masukkan detail Anda untuk masuk</p>
+    <div className="w-full max-w-md bg-white dark:bg-slate-900 shadow-sm border border-gray-200 dark:border-slate-800 rounded-2xl p-8 transform transition-all duration-300">
+
+      <div className="mt-5 sm:mb-6">
+        <h1 className="mb-2 font-semibold text-gray-800 dark:text-gray-300 text-3xl">Login</h1>
+        <p className="text-sm mt-3 text-gray-500 dark:text-gray-400"> Silakan masukkan detail Anda untuk masuk</p>
       </div>
 
       {successMessage && (
@@ -78,8 +77,9 @@ function LoginContent() {
             </label>
             <input
               type="text"
+               autoComplete="username"
               required
-              className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
+              className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-1 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
               value={form.emailOrUsername}
               placeholder="Masukkan email atau nama pengguna"
               onChange={(e) =>
@@ -95,8 +95,9 @@ function LoginContent() {
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
+                autoComplete="current-password"
                 required
-                className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
+                className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-1 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
                 value={form.password}
                 placeholder="Masukkan kata sandi"
                 onChange={(e) =>
@@ -139,13 +140,14 @@ function LoginContent() {
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-950 px-4 font-sans transition-colors duration-500">
-      <div className="w-full max-w-md">
-        <div className="bg-white dark:bg-slate-900 shadow-sm border border-gray-200 dark:border-slate-800 rounded-2xl p-8 transform transition-all duration-300">
-          <Suspense fallback={<div className="text-gray-500 dark:text-gray-400 text-center py-10">Memuat...</div>}>
-            <LoginContent />
-          </Suspense>
-        </div>
+    <div className="relative flex lg:flex-row w-full h-screen justify-center flex-col bg-slate-100">
+      <div className="lg:w-1/2 w-full h-full dark:bg-slate-900 lg:grid items-center justify-center hidden relative">
+        <img src="/bg.avif" alt="bg" className="object-fill"></img>
+      </div>
+      <div className="items-center justify-center flex flex-col lg:w-1/2 bg-slate-50 dark:bg-slate-950 p-10">
+        <Suspense fallback={<div className="text-gray-500 dark:text-gray-400 text-center py-10">Memuat...</div>}>
+          <LoginContent />
+        </Suspense>
       </div>
     </div>
   );

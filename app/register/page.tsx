@@ -49,11 +49,9 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-950 px-4 font-sans transition-colors duration-500">
       <div className="w-full max-w-md bg-white dark:bg-slate-900 shadow-sm border border-gray-200 dark:border-slate-800 rounded-2xl p-8 transform transition-all duration-300">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-extrabold text-blue-600 dark:text-blue-400 mb-2">
-            Daftar Akun
-          </h1>
-          <p className="text-gray-500 dark:text-gray-400">Bergabunglah untuk mengakses dasbor</p>
+        <div className="mb-8">
+          <h1 className="mb-2 font-semibold text-gray-800 dark:text-gray-300 text-3xl">Daftar Akun</h1>
+          <p className="text-sm mt-3 text-gray-500 dark:text-gray-400">Bergabunglah untuk mengakses dasbor</p>
         </div>
 
         {error && (
@@ -71,7 +69,7 @@ export default function RegisterPage() {
               <input
                 type="text"
                 required
-                className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
+                className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-1 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
                 value={form.username}
                 placeholder="Masukkan nama pengguna"
                 onChange={(e) => setForm({ ...form, username: e.target.value })}
@@ -85,7 +83,7 @@ export default function RegisterPage() {
               <input
                 type="email"
                 required
-                className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
+                className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-1 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
                 value={form.email}
                 placeholder="Masukkan alamat email"
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -98,8 +96,9 @@ export default function RegisterPage() {
               </label>
               <input
                 type="password"
+                autoComplete="current-password"
                 required
-                className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
+                className="w-full mt-1.5 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-1 focus:ring-blue-500 outline-none transition-all dark:bg-gray-700 dark:text-white"
                 value={form.password}
                 placeholder="Masukkan kata sandi"
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
