@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 import LoadingSpinner from "@/components/LoadingSpinner";
+import { Icon } from "@iconify/react";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -17,6 +18,7 @@ export default function RegisterPage() {
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleRegister = async (e: any) => {
     e.preventDefault();
@@ -103,6 +105,17 @@ export default function RegisterPage() {
                 placeholder="Masukkan kata sandi"
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-4 top-8 -translate-y-1/2 text-gray-400 hover:text-blue-500 transition-colors"
+              >
+                {showPassword ? (
+                  <Icon icon="lucide:eye-off" className="w-5 h-5" />
+                ) : (
+                  <Icon icon="lucide:eye" className="w-5 h-5" />
+                )}
+              </button>
             </div>
 
             <button

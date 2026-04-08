@@ -24,14 +24,14 @@ Daftar Menggunakan:
 
 ### Tampilan Desktop
 <div align="center">
-  <img src="./public/screenshots/desktop-login.png" width="32%" alt="Desktop Login" />
-  <img src="./public/screenshots/desktop-register.png" width="32%" alt="Desktop Register" />
+  <img src="./public/screenshots/desktop-login.avif" width="32%" alt="Desktop Login" />
+  <img src="./public/screenshots/desktop-register.avif" width="32%" alt="Desktop Register" />
 </div>
 
 ### Tampilan Mobile
 <div align="center">
-  <img src="./public/screenshots/mobile-login.png" width="200" alt="Mobile Login" />
-  <img src="./public/screenshots/mobile-register.png" width="200" alt="Mobile Register" />
+  <img src="./public/screenshots/mobile-login.avif" width="200" alt="Mobile Login" />
+  <img src="./public/screenshots/mobile-register.avif" width="200" alt="Mobile Register" />
 </div>
 
 ## 🚀 Tech Stack
